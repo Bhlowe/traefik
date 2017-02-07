@@ -10,5 +10,6 @@ angular
 
   /** @ngInject */
   function Overview($resource) {
-    return $resource('../api/providers');
+    // return $resource('../api/providers');
+    return $resource('http://docker:8080/api/providers');
   }

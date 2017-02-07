@@ -8,10 +8,21 @@
             <td><em>Route</em></td>
             <td><em>Rule</em></td>
           </tr>
+		  <!--
           <tr data-ng-repeat="(frontendId, frontend) in provider.frontends">
             <td>{{frontendId}}</td>
             <td><code>{{frontend.rule}}</code></td>
           </tr>
+		 -->
+		 
+		   <tr ng-repeat="x in table" ng-bind-html-unsafe="x.name">
+			<td>{{ x.name }}</td>
+			<td>{{ x.frontend }}</td>
+			<td>{{ x.backend }}</td>
+		  </tr>
+
+		 
+		 
         </table>
       </div>
 
