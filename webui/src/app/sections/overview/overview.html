@@ -1,9 +1,20 @@
 <div>
-  <h1 class="text-danger">
-    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Overview
-  </h1>
+  <uib-tabset>
+    <uib-tab data-ng-repeat="(providerId, provider) in overviewCtrl.providers" heading="{{providerId}}">
 
-  <div class="row">
+      <div class="panel-body">
+        <table class="panel-table__routes table table-striped table-hover">
+          <tr>
+            <td><em>Route</em></td>
+            <td><em>Rule</em></td>
+          </tr>
+          <tr data-ng-repeat="(frontendId, frontend) in provider.frontends">
+            <td>{{frontendId}}</td>
+            <td><code>{{frontend.rule}}</code></td>
+          </tr>
+        </table>
+      </div>
 
-
+    </uib-tab>
+  </uib-tabset>
 </div>
