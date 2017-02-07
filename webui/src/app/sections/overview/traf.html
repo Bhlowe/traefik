@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Traefik</title>
+  </head>
+  <body>
+  <script src="traf.js"></script>
+  
+ <script type="text/javascript">
+ 
+loadJSON('/providers.json',
+    function (data)
+{
+    filterProviders(data);
+    var html = getHTML(data);
+
+    document.getElementById("id").innerHTML = html;
+
+},
+    function (xhr)
+{
+    console.error(xhr);
+}
+);
+
+    </script>
+	<div id='id'></div>
+	
+  </body>
+</html>
