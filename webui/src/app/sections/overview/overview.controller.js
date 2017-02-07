@@ -5,7 +5,8 @@
 function OverviewController($scope, $interval, $log, $http) {
 
   var vm = this;
-	$log.info("new OverviewController");
+
+  $log.info("new OverviewController");
 	  
   function getNameHTML(json, name)
 {
@@ -172,13 +173,13 @@ function filterProviders(json)
 
 }
 
-
   /**
    * Load data
    *
    * @param {Object} health Health data from server
    */
   function loadData(providers) {
+
 	  $log.info("loadData: ");
 	  $log.info(providers.data);
 	  vm.overview = filterProviders(providers.data);
@@ -195,6 +196,7 @@ function filterProviders(json)
     $log.error("erroData: "+error);
   }
 
+
   $log.info("starting... getting providers");
   
     $http.get('/assets/providers.json')
@@ -204,14 +206,7 @@ function filterProviders(json)
   	   
   // Providers.get(loadData, erroData);
   
-  // first load
-  // Health.get(loadData, erroData);
-/*
-  // Auto refresh data
-  var intervalId = $interval(function () {
-    // Health.get(loadData, erroData);
-  }, 3000);
-*/
+
 
   // Stop auto refresh when page change
   $scope.$on('$destroy', function () {
