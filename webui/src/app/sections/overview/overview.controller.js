@@ -1,7 +1,7 @@
 'use strict';
 
 /** @ngInject */
-function OverviewController($scope, $interval, $log, $http)
+function OverviewController($scope, $interval, $log, $http, Overview)
 {
 
     var vm = this;
@@ -170,18 +170,25 @@ function OverviewController($scope, $interval, $log, $http)
      */
     function erroData(error)
     {
-        vm.health = {};
+        vm.overview = {};
         $log.error("erroData: " + error);
     }
 
     $log.info("starting... getting providers");
-
+	if (false)
+{
     $http.get('/assets/providers.json')
     .then(loadData, erroData);
+}
+else
+{
+
+    Overview.get(loadData, erroData);
+
+}
 
     $log.info("called get providers");
 
-    // Providers.get(loadData, erroData);
 
 
     // Stop auto refresh when page change
