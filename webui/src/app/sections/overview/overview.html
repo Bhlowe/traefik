@@ -1,6 +1,4 @@
-
-
-<div> 
+<div>
 
       <div class="panel-body">
         <table class="panel-table__routes table table-striped table-hover">
@@ -9,11 +7,11 @@
             <td><em>Frontend</em></td>
             <td><em>Backend</em></td>
           </tr>
-		  
+
 		<tr data-ng-repeat="x in overviewCtrl.overview.table"    >
-			<td>{{ x.name }}</td>	<!-- html (or not) --> 
-			<td ng-bind-html="x.frontend">{{ x.frontend }}</td>	<!-- html --> 
-			<td ng-bind-html="x.backend">{{ x.backend }}</td>	<!-- html --> 
+      <td>{{ x.name }}</td>  <!-- html (or not) -->
+      <td ng-bind-html="x.frontend">{{ x.frontend }}</td>  <!-- html -->
+      <td ng-bind-html="x.backend">{{ x.backend }}</td>  <!-- html -->
 		  </tr>
         </table>
       </div>
